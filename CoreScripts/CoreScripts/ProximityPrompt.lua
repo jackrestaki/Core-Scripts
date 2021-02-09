@@ -6,6 +6,8 @@ local TextService = game:GetService("TextService")
 local Players = game:GetService("Players")
 local RobloxGui = CoreGui:WaitForChild("RobloxGui")
 
+local CoreUtility = require(RobloxGui.Modules.CoreUtility)
+
 local FFlagProximityPromptLocalization = game:DefineFastFlag("ProximityPromptLocalization", false)
 local FFlagProximityPromptNoButtonDrag = game:DefineFastFlag("ProximityPromptNoButtonDrag", false)
 local FFlagProximityPromptLiveChanges = game:DefineFastFlag("ProximityPromptLiveChanges", false)
@@ -23,7 +25,7 @@ if FFlagProximityPromptLocalization then
 		LocalPlayer = Players.LocalPlayer
 	end
 
-	PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+	PlayerGui = CoreUtility.waitForChildOfClass(LocalPlayer, "PlayerGui")
 end
 
 local GamepadButtonImage = {
