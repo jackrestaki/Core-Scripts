@@ -34,3 +34,6 @@ _yardoc
 doc/
 *.sublime-project
 *.sublime-workspace
+
+.vscode
+.vs
